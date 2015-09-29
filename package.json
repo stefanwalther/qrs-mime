@@ -1,0 +1,32 @@
+{
+  "name": "qrs-mime",
+  "version": "0.1.0",
+  "description": "Add mime types to the Qlik Sense repository.",
+  "main": "./bin/cli.js",
+  "scripts": {
+    "test": "mocha test"
+  },
+  "preferGlobal": true,
+  "bin": "./bin/cli.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stefanwalther/qrs-mime"
+  },
+  "keywords": [
+    "qlik",
+    "qlik-sense",
+    "qrs",
+    "qlik-sense-repository",
+    "extensions",
+    "visualization-extensions"
+  ],
+  "author": "Stefan Walther",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/stefanwalther/qrs-mime/issues"
+  },
+  "homepage": "https://github.com/stefanwalther/qrs-mime",
+  "dependencies": {
+    "qrs": "0.0.1"
+  }
+}
