@@ -120,7 +120,6 @@ function runWithCertificates () {
 			'key': options.certFiles.key,
 			'ca': options.certFiles.ca
 		};
-		console.log(config);
 		runWithOptions( config );
 	}
 }
