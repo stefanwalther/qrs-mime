@@ -18,6 +18,7 @@ module.exports = [
 		"alias": "a",
 		"type": String,
 		"group": "main",
+		"defaultValue": "certificates",
 		"description": "Authentication method, can be either \"certificates\" (c) or \"header\" (h)."
 	},
 	{
@@ -57,6 +58,24 @@ module.exports = [
 		"type": String,
 		"group": "main",
 		"description": "File containing the mime-type definitions to add."
+	},
+	{
+		"name": "cert",
+		"type": String,
+		"group": "certificates",
+		"description": "Certificate file containing the certificate (client.pem)."
+	},
+	{
+		"name": "key",
+		"type": String,
+		"group": "certificates",
+		"description": "Certificate file containing the key (client_key.pem)."
+	},
+	{
+		"name": "ca",
+		"type": String,
+		"group": "certificates",
+		"description": "Certificate file containing the ca (root.pem)."
 	}
 
 ];
