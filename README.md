@@ -87,6 +87,8 @@ Some references helping you to set up header authentication:
 
 ### Running _qrs-mime_ on a different machine / using certificates
 
+[![](images/qrs-mime-result.png)](#installation)
+
 If you have exported the certificates and copied to your system, you should then have the following information available to run `qrs-mime`:
 
 * Fully qualified name or IP-address of your server (e.g. `myserver.mydomain.com`)
