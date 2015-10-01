@@ -1,21 +1,11 @@
-* **`--help`** (alias `-h`)
-Display the usage guide.
-
-* **`--debug`** (alias `-d`)
-Return debug info.
-
-* **`--server`**
-Server where the QRS is running.
-
-* **`--virtualproxy`**
-Name of the virtual proxy.
-
+* **`--help`** (alias `-h`) - Display the usage guide.
+* **`--debug`** (alias `-d`) - Return debug info.
+* **`--server`** - Server where the QRS is running.
+* **`--virtualproxy`** - Name of the virtual proxy.
 * **`--auth`** (alias `-d`)
 Authentication method, can be either \"certificates\" (c) or \"header\" (h).
 Defaults to "certificates".
-
-* **`--port`** (alias `-p`)
-Port to be used. 
+* **`--port`** (alias `-p`) Port to be used. 
 If you want to use the default port, use 0 or leave blank.
 In case of using certificates leave either blank or use 4242.
 
