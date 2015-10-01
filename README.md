@@ -107,7 +107,7 @@ I cannot guarantee that I will merge all PRs but I will evaluate them all.
 
 ## Related Projects
 
-qrs-mime uses qrs, which is a a node.js library you can use to communicate with the QRS API.
+_qrs-mime_ uses [qrs](https://github.com/stefanwalther/qrs), which is a a node.js library you can use to communicate with the QRS API.
 
 ## Author
 
