@@ -1,3 +1,5 @@
+/*define module*/
+'use strict';
 module.exports = [
 	{
 		"name": "help",
@@ -8,7 +10,7 @@ module.exports = [
 	{
 		"name": "debug",
 		"alias": "d",
-		"group": "debug",
+		"group": "main",
 		"type": Boolean,
 		"defaultValue": false,
 		"description": "Return debug info."
@@ -36,7 +38,7 @@ module.exports = [
 		"description": "Server where the QRS is running."
 	},
 	{
-		"name": "virtual-proxy",
+		"name": "virtualproxy",
 		"type": String,
 		"group": "main",
 		"description": "Name of the virtual proxy."

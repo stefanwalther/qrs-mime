@@ -8,7 +8,15 @@ var QRS = require( 'qrs' );
 var path = require('path');
 var fs = require( 'fs' );
 var cli = commandLineArgs( require('./cli-params') );
-var options = cli.parse();
+var os = require('os');
+
+try	{
+	var options = cli.parse();
+} catch( e ) {
+	console.log(colors.red('One ore more parameters are invalid, please review your otpions.'));
+	return;
+}
+
 
 function configValid () {
 	if ( _.isEmpty( options.main.server ) ) {
@@ -111,7 +119,7 @@ function runWithCertificates () {
 			"authentication": 'certificates',
 			"host": options.main.server,
 			"useSSL": options.main.ssl,
-			"virtualProxy": options.main['virtual-proxy'] || '',
+			"virtualProxy": options.main.virtualproxy || '',
 			"xrfkey": 'ABCDEFG123456789',
 			"headerKey": 'X-Qlik-User',
 			'headerValue': 'UserDirectory= Internal; UserId= sa_repository',
@@ -156,7 +164,7 @@ function runWithHeaders () {
 			"authentication": 'header',
 			"host": options.main.server,
 			"useSSL": options.main.ssl,
-			"virtualProxy": options.main['virtual-proxy'] || null,
+			"virtualProxy": options.main.virtualproxy || null,
 			"headerKey": options.header['header-key'] || null,
 			"headerValue": options.header['header-value'] || null,
 			"xrfkey": 'ABCDEFG123456789'
@@ -171,10 +179,49 @@ function runWithOptions( config ) {
 		.then( function ( data ) {
 			console.log( colors.green(data.length + ' mime-types have been added or updated.'));
 		}, function ( err ) {
-			console.log( colors.red('An error occurred: '));
+
+			console.log( colors.red('An unexpected error occurred, please review your configuration.'));
+			console.log('If you want to see the detailed error stack, use option ' + colors.yellow('--debug'));
+			var errLogDest = saveErrorLog( err );
+			if (errLogDest !== '') {
+				console.log('A detailed error log has been saved to ' + errLogDest);
+			}
+
 			console.log('');
-			console.log( err );
+			if (err && err.error && err.error.code === 'ENOTFOUND') {
+				console.log('\tServer ' + err.error.hostname + ' could not be found.');
+			} else {
+
+			}
+
+			if (options.main.debug) {
+				console.log('');
+				console.log(colors.yellow('DETAILED ERROR STACK:'));
+				console.log('');
+				console.log( err );
+			}
 		});
+}
+
+function saveErrorLog( errLog ) {
+	var tmpDir = os.tmpdir();
+	var i = 1;
+	var done = false;
+	var filePath = '';
+	while( !done && i < 100 /* safety-net*/) {
+		filePath = path.join( tmpDir , 'qrs-mime-' + i + '.debug.log');
+		if (!fs.existsSync(filePath)) {
+			try {
+				fs.writeFileSync( filePath, JSON.stringify(errLog), 'utf8' );
+			} catch( e) {
+				return '';
+			}
+			done = true;
+			return filePath;
+		}
+		i++;
+	}
+	return '';
 }
 
 
