@@ -1,4 +1,4 @@
-# qrs-mime (ALPHA-VERSION)
+# qrs-mime (ALPHA)
 
 > Add mime types to the Qlik Sense repository.
 
