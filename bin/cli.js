@@ -44,8 +44,7 @@ function run () {
 		return runHelp();
 	}
 	if (options._all.debug) {
-		console.log('DEBUG INFO:');
-		console.log('');
+		console.log(colors.cyan('Command line options:'));
 		console.log(options._all);
 	}
 	if ( configValid() ) {
@@ -121,20 +120,26 @@ function runWithCertificates () {
 			"useSSL": options.main.ssl,
 			"virtualProxy": options.main.virtualproxy || '',
 			"xrfkey": 'ABCDEFG123456789',
-			"headerKey": 'X-Qlik-User',
-			'headerValue': 'UserDirectory= Internal; UserId= sa_repository',
 			'port': options.main.port || 4242,
 			'cert': options.certFiles.cert,
 			'key': options.certFiles.key,
-			'ca': options.certFiles.ca
+			'ca': options.certFiles.ca,
+			'passphrase': options.certificates.passphrase
 		};
+		if (options.main['header-key'] && options.main['header-value']) {
+			config.headerKey = options.main['header-key'];
+			config.headerValue = options.main['header-value'];
+		} else {
+			config.headerKey = 'X-Qlik-User';
+			config.headerValue =  'UserDirectory=Internal;UserId=sa_repository';
+		}
 		runWithOptions( config );
 	}
 }
 
 function checkHeaderOptions () {
 
-	if ( _.isEmpty( options.header['header-key'] ) ) {
+	if ( _.isEmpty( options.main['header-key'] ) ) {
 		console.log( colors.red( 'Using header authentication: Please define a key for the header: ' ) );
 		console.log( '' );
 		console.log( '\t' + colors.yellow( 'Example:' ) );
@@ -143,7 +148,7 @@ function checkHeaderOptions () {
 		console.log('If you want to use another authentication method, have a look at the help (--help) or the online documentation.')
 		return false;
 	}
-	if ( _.isEmpty( options.header['header-value'] ) ) {
+	if ( _.isEmpty( options.main['header-value'] ) ) {
 		console.log( colors.red( 'Using header authentication: Please define a value for the header-authentication: ' ) );
 		console.log( '' );
 		console.log( '\t' + colors.yellow( 'Example:' ) );
@@ -165,8 +170,8 @@ function runWithHeaders () {
 			"host": options.main.server,
 			"useSSL": options.main.ssl,
 			"virtualProxy": options.main.virtualproxy || null,
-			"headerKey": options.header['header-key'] || null,
-			"headerValue": options.header['header-value'] || null,
+			"headerKey": options.main['header-key'] || null,
+			"headerValue": options.main['header-value'] || null,
 			"xrfkey": 'ABCDEFG123456789'
 		};
 		runWithOptions( config );
@@ -174,24 +179,33 @@ function runWithHeaders () {
 }
 
 function runWithOptions( config ) {
+
+	if (options.main.debug) {
+		console.log('');
+		console.log(colors.cyan('Config sent to qrs:'));
+		console.log(config);
+	}
+
 	var qrs = new QRS( config );
 	qrs.mime.addFromFile( options.main.file )
 		.then( function ( data ) {
 			console.log( colors.green(data.length + ' mime-types have been added or updated.'));
 		}, function ( err ) {
 
+			console.log('');
 			console.log( colors.red('An unexpected error occurred, please review your configuration.'));
+			console.log('');
+			if (err && err.error && err.error.code === 'ENOTFOUND') {
+				console.log('\tServer ' + err.error.hostname + ' could not be found.');
+			} else if (err && err.error && err.error.code === 'ETIMEDOUT') {
+				console.log('\tTimeout trying to contact ' + options.main.server + '.');
+			}
+
+			console.log('');
 			console.log('If you want to see the detailed error stack, use option ' + colors.yellow('--debug'));
 			var errLogDest = saveErrorLog( err );
 			if (errLogDest !== '') {
 				console.log('A detailed error log has been saved to ' + errLogDest);
-			}
-
-			console.log('');
-			if (err && err.error && err.error.code === 'ENOTFOUND') {
-				console.log('\tServer ' + err.error.hostname + ' could not be found.');
-			} else {
-
 			}
 
 			if (options.main.debug) {

@@ -24,6 +24,14 @@ module.exports = [
 		"description": "Authentication method, can be either \"certificates\" (c) or \"header\" (h)."
 	},
 	{
+		"name": "port",
+		"alias": "p",
+		"type": Number,
+		"group": "main",
+		"defaultValue": 0,
+		"description": "Port to be used. In case of using certificates leave either blank or use 4242."
+	},
+	{
 		"name": "ssl",
 		"alias": "s",
 		"type": Boolean,
@@ -46,13 +54,13 @@ module.exports = [
 	{
 		"name": "header-key",
 		"type": String,
-		"group": "header",
+		"group": "main",
 		"description": "Header key to be used for header authentication (Header authentication header name)."
 	},
 	{
 		"name": "header-value",
 		"type": String,
-		"group": "header",
+		"group": "main",
 		"description": "Header value to be used for header authentication."
 	},
 	{
@@ -66,6 +74,12 @@ module.exports = [
 		"type": String,
 		"group": "certificates",
 		"description": "Certificate file containing the certificate (client.pem)."
+	},
+	{
+		"name": "passphrase",
+		"type": String,
+		"group": "certificates",
+		"description": "Passphrase if definied for your certificates."
 	},
 	{
 		"name": "key",
