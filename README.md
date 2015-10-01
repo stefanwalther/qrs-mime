@@ -6,9 +6,6 @@
 
 qrs-mime is a node.js based command line tool allowing you to add mime-type definitions to Qlik Sense server.
 
-Why is this important?
-l
-
 ## Usage
 
 After installation of _qrs-mime_ using [npm](https://npmjs.com) open the [node.js](https://nodejs.org) command line and run _qrs-mime_ using one of the following options:
