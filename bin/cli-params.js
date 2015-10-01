@@ -33,11 +33,10 @@ module.exports = [
 	},
 	{
 		"name": "ssl",
-		"alias": "s",
 		"type": Boolean,
 		"defaultValue": false,
 		"group": "main",
-		"description": "Whether to use SSL (defaults to true)"
+		"description": "Whether to use SSL (defaults to false)"
 	},
 	{
 		"name": "server",

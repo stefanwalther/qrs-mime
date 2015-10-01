@@ -31,11 +31,11 @@ qrs-mime
 	--header-key=hdr-usr 
 	--header-value=mydomain.com\myUserName
 ```
+*(Remove line breaks which were just added to improve readability)*
+
 **Note:** 
 * Depending on the connection to the server, it can take a minute or two until the the job is done.
 * Further options can be defined if necessary.
-
-*(Remove line breaks which were just added to improve readability)*
 
 Some references helping you to set up header authentication:
 
@@ -66,12 +66,11 @@ qrs-mime
 	--key="C:\CertStore\client_key.pem"
 	--ca="C:\CertStore\root.pem
 ```
+*(Remove line breaks which were just added to improve readability)*
 
 **Note:** 
 * Depending on the connection to the server, it can take a minute or two until the the job is done.
 * Further options can be defined if necessary.
-
-*(Remove line breaks which were just added to improve readability)*
 
 Some references helping to set up certificate based authentication:
 
