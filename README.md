@@ -39,6 +39,8 @@ Use [npm](https://npmjs.com) to install _qrs-sense_ globally.
 npm install qrs-mime -g
 ```
 
+[![](docs/images/qrs-mime-install-result.png)](#installation)
+
 ## Usage
 
 After installation of _qrs-mime_ using [npm](https://npmjs.com) open the [node.js](https://nodejs.org) command line and run _qrs-mime_ using one of the following options:
@@ -95,7 +97,7 @@ Some references helping you to set up header authentication:
 
 ### Running _qrs-mime_ on a different machine / using certificates
 
-[![](docs/images/qrs-mime-result.png)](#installation)
+[![](docs/images/qrs-mime-result.png)](#usage)
 
 If you have exported the certificates and copied to your system, you should then have the following information available to run `qrs-mime`:
 
@@ -155,7 +157,7 @@ If SSL is desired, define --ssl, otherwise omit this option.
 
 ## Defining your own set of Mime-types
 
-When running _qrs-mime_ by default the list of Mime-types defined in the file ./config/mime-types.txt
+When running _qrs-mime_ by default the list of Mime-types defined in the file `./config/mime-types.txt`
 
 ## Troubleshooting
 

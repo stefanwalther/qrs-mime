@@ -5,5 +5,7 @@
 npm install qrs-mime -g
 ```
 
+![](docs/images/qrs-mime-install-result.png)
+
 
 
