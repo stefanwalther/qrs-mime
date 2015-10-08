@@ -74,11 +74,18 @@ function checkCertificateOptions() {
 
 	if (options.certFiles) {delete options.certFiles;}
 
-	//Todo: Load the Qlik Sense server certificates by default
 	options.certFiles = {};
-	options.certFiles.cert = options.certificates.cert;
-	options.certFiles.key = options.certificates.key;
-	options.certFiles.ca = options.certificates.ca;
+
+	// Default certificate files for localhost
+	var defaultCertFiles = {
+		cert: 'C:\\ProgramData\\Qlik\\Sense\\Repository\\Exported Certificates\\.Local Certificates\\client.pem',
+		key: 'C:\\ProgramData\\Qlik\\Sense\\Repository\\Exported Certificates\\.Local Certificates\\client_key.pem',
+		ca: 'C:\\ProgramData\\Qlik\\Sense\\Repository\\Exported Certificates\\.Local Certificates\\root.pem'
+	};
+
+	options.certFiles.cert = fs.existsSync(options.certificates.cert) ? options.certificates.cert : defaultCertFiles.cert;
+	options.certFiles.key = fs.existsSync(options.certificates.key) ? options.certificates.key : defaultCertFiles.key;
+	options.certFiles.ca = fs.existsSync(options.certificates.ca) ? options.certificates.ca : defaultCertFiles.ca;
 
 	if ( _.isEmpty( options.certFiles.cert ) || !fs.existsSync(options.certFiles.cert) ) {
 		console.log( colors.red( 'Using certificate-based authentication: Please define a valid cert file: ' ) );
