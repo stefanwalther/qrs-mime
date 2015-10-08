@@ -1,9 +1,10 @@
 After installation of *qrs-mime* using [npm](https://npmjs.com) open the [node.js](https://nodejs.org) command line and run *qrs-mime* using one of the following options:
 
-* **Run the tool directly on Qlik Sense server**
+* **Run the tool directly on Qlik Sense server**  
 By doing so the locally already available certificates will be used for authentication.
 * **Run the tool on a different machine against a Qlik Sense server**  
 If this is the case, you need to set up proper authentication between your machine and the server where the Qlik Sense Repository Services (QRS) is running on.
+
 
 ### Running qrs-mime directly on Qlik Sense server
 
