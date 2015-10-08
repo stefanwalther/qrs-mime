@@ -204,6 +204,7 @@ function runWithOptions( config ) {
 		.then( function ( data ) {
 			runningIndicator.stop();
 			console.log( colors.green(data.length + ' mime-types have been added or updated.'));
+			console.log('');
 		}, function ( err ) {
 
 			runningIndicator.stop();
