@@ -6,6 +6,8 @@
 
 qrs-mime is a node.js based command line tool allowing you to add mime-type definitions to Qlik Sense server.
 
+This tool can be used to add the missing mime types in Qlik Sense 2.1.1 to make typical visualization extensions work again, but in general this tool can also be used to add support for very specific Mime-types in your Qlik Sense environment in general.
+
 ## Table of Contents
 
 <!-- toc -->
@@ -13,6 +15,7 @@ qrs-mime is a node.js based command line tool allowing you to add mime-type defi
 * [Installation](#installation)
 * [Usage](#usage)
 * [Command line options](#command-line-options)
+* [Defining your own set of Mime-types](#defining-your-own-set-of-mime-types)
 * [Troubleshooting](#troubleshooting)
 * [Known Issues](#known-issues)
 * [Contributing](#contributing)
@@ -150,12 +153,17 @@ If SSL is desired, define --ssl, otherwise omit this option.
 * **`--passphrase`** - (TBD, not clear if needed at all)
 * **`--file`** - Path to the file containing the definition of mime-types, by default the file you can find in this repository under `./config/mime-types.txt` will be taken.
 
+## Defining your own set of Mime-types
+
+When running _qrs-mime_ by default the list of Mime-types defined in the file ./config/mime-types.txt
+
 ## Troubleshooting
 
 Some recommendations if _qrs-mime_ does not work:
 * Make sure that you can reach the server, use ping `<servername>` to see if you can ping it
 * Ensure that no firewall is preventing communication over port 4242 (certificates) or 80/443.
 * Running the tool can take a minute or two, please be patient and wait for the result.
+* If an exception is thrown you'll see a message that a log file has been created in your personal temporary folder.
 
 ## Known Issues
 
