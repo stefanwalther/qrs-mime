@@ -20,7 +20,7 @@ qrs-mime --server=qsSingle --ssl
 ```
 
 That's it, you should get the following confirmation:
-
+![](docs/images/qrs-mime-server_result.png)
 
 
 ### Running qrs-mime on a different machine / using header authentication

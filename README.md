@@ -67,6 +67,7 @@ qrs-mime --server=qsSingle --ssl
 ```
 
 That's it, you should get the following confirmation:
+[![](docs/images/qrs-mime-server_result.png)](#command-line-options)
 
 ### Running qrs-mime on a different machine / using header authentication
 
@@ -105,7 +106,7 @@ Some references helping you to set up header authentication:
 
 ### Running _qrs-mime_ on a different machine / using certificates
 
-[![](docs/images/qrs-mime-result.png)](#command-line-options)
+[![](docs/images/qrs-mime-result.png)](#defining-your-own-set-of-mime-types)
 
 If you have exported the certificates and copied to your system, you should then have the following information available to run `qrs-mime`:
 
