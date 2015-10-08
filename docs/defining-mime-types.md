@@ -4,7 +4,9 @@ You can either modify this file to meet your custom needs or point to your very 
 
 Each line of such a file defines a Mime-type to add, e.g.: 
 
-    md;text/x-markdown;;false
+```bash
+md;text/x-markdown;;false
+```
 
 In every line four settings need to be made
 
