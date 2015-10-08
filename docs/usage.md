@@ -7,8 +7,16 @@ If this is the case, you need to set up proper authentication between your machi
 
 ### Running qrs-mime directly on Qlik Sense server
 
+First find out the qualified name you have used during the installation. The easiest way to achieve this is to open the "Qlik Management Console" on your server, then you'll see the qualified name in the Url:
+
+E.g.
+
+![](docs/images/qrs-mime-qualified-name.png)
+
+Then run the *qrs-mime*:
+
 ```bash
-qrs-mime
+qrs-mime --server=qsSingle --ssl
 ```
 
 That's it, you should get the following confirmation:

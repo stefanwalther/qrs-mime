@@ -1,6 +1,6 @@
 {
   "name": "qrs-mime",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Add mime types to the Qlik Sense repository.",
   "main": "./bin/cli.js",
   "scripts": {
