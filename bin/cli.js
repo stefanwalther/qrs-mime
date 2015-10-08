@@ -9,6 +9,8 @@ var path = require('path');
 var fs = require( 'fs' );
 var cli = commandLineArgs( require('./cli-params') );
 var os = require('os');
+var clui = require('clui');
+var spinner = clui.Spinner;
 
 try	{
 	var options = cli.parse();
@@ -187,6 +189,10 @@ function runWithHeaders () {
 
 function runWithOptions( config ) {
 
+	var runningIndicator = new Spinner('Adding Mime-types ...');
+	console.log('\n');
+	runningIndicator.start();
+
 	if (options.main.debug) {
 		console.log('');
 		console.log(colors.cyan('Config sent to qrs:'));
@@ -196,9 +202,11 @@ function runWithOptions( config ) {
 	var qrs = new QRS( config );
 	qrs.mime.addFromFile( options.main.file )
 		.then( function ( data ) {
+			runningIndicator.stop();
 			console.log( colors.green(data.length + ' mime-types have been added or updated.'));
 		}, function ( err ) {
 
+			runningIndicator.stop();
 			console.log('');
 			console.log( colors.red('An unexpected error occurred, please review your configuration.'));
 			console.log('');
