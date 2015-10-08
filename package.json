@@ -12,6 +12,11 @@
     "type": "git",
     "url": "https://github.com/stefanwalther/qrs-mime"
   },
+  "files": [
+    "./bin/cli.js",
+    "./bin/cli-params.js",
+    "./config/mime-types.txt"
+  ],
   "keywords": [
     "qlik",
     "qlik-sense",
