@@ -42,6 +42,7 @@ module.exports = [
 		"name": "server",
 		"type": String,
 		"group": "main",
+		"defaultValue": "localhost",
 		"description": "Server where the QRS is running."
 	},
 	{
