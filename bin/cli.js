@@ -10,7 +10,7 @@ var fs = require( 'fs' );
 var cli = commandLineArgs( require('./cli-params') );
 var os = require('os');
 var clui = require('clui');
-var spinner = clui.Spinner;
+var Spinner = clui.Spinner;
 
 try	{
 	var options = cli.parse();
