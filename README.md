@@ -4,9 +4,9 @@
 
 ## About
 
-qrs-mime is a node.js based command line tool allowing you to add mime-type definitions to Qlik Sense server.
+The _qrs-mime_ tool is a command line tool based on node.js. It allows you to add mime-type definitions to Qlik Sense server.
 
-This tool can be used to add the missing mime types in Qlik Sense 2.1.1 to make typical visualization extensions work again, but in general this tool can also be used to add support for very specific Mime-types in your Qlik Sense environment in general.
+This tool can be used to add the missing mime types in Qlik Sense 2.1.1 to make typical visualization extensions work again, but in general, this tool can also be used to add support for very specific Mime-types in your Qlik Sense environment.
 
 ## Table of Contents
 
@@ -43,19 +43,15 @@ npm install qrs-mime -g
 
 After installation of _qrs-mime_ using [npm](https://npmjs.com) open the [node.js](https://nodejs.org) command line and run _qrs-mime_ using one of the following options:
 
-**Run the tool directly on Qlik Sense server**
+**Run the tool directly on Qlik Sense server** - By doing so the locally already available certificates will be used for authentication.
 
-By doing so the locally already available certificates will be used for authentication.
-
-**Run the tool on a different machine against a Qlik Sense server**
-
-If this is the case, you need to set up proper authentication between your machine and the server where the Qlik Sense Repository Services (QRS) is running on.
+**Run the tool on a different machine against a Qlik Sense server** - If this is the case, you need to set up proper authentication between your machine and the server where the Qlik Sense Repository Services (QRS) is running on.
 
 ### Running qrs-mime directly on Qlik Sense server
 
 First find out the qualified name you have used during the installation. The easiest way to achieve this is to open the "Qlik Management Console" on your server, then you'll see the qualified name in the Url:
 
-E.g.
+For example:
 
 [![](docs/images/qrs-mime-qualified-name.png)](#installation)
 
@@ -78,7 +74,7 @@ If you have properly set up header authentication for QRS, you should then have 
 * The user you want to map to:
   - The header key and (e.g. `hdr-usr`)
   - The header value (e.g. `mydomain.com\myUserName`)
-* The user define in your header-value should have rootAdmin permissions on QRS
+* The user defined in your header-value should have rootAdmin permissions on QRS
 
 Then run the following command:
 
@@ -99,7 +95,7 @@ _(Remove line breaks which were just added to improve readability)_
 * Depending on the connection to the server, it can take a minute or two until the the job is done.
 * Further options can be defined if necessary.
 
-Some references helping you to set up header authentication:
+Some references to help you to set up header authentication:
 
 * [Qlik Sense Help: Virtual Proxy](http://help.qlik.com/sense/2.1/en-US/online/Subsystems/ManagementConsole/Content/create-virtual-proxy.htm)
 
@@ -136,9 +132,9 @@ _(Remove line breaks which were just added to improve readability)_
 * Depending on the connection to the server, it can take a minute or two until the the job is done.
 * Further options can be defined if necessary.
 
-Some references helping to set up certificate based authentication:
+Some references to help to set up certificate based authentication:
 
-* [Qlik Sense Developer Help: Exporting certificates](http://help.qlik.com/sense/2.1/en-US/online/Subsystems/ManagementConsole/Content/export-certificates.htm) (ensure to use the platform independent format)
+* [Qlik Sense Developer Help: Exporting certificates](http://help.qlik.com/sense/2.1/en-US/online/Subsystems/ManagementConsole/Content/export-certificates.htm) (Make sure you use the platform independent format)
 * [Qlik Sense Developer Help: Connecting using certificates](http://help.qlik.com/sense/2.1/en-us/developer/Subsystems/RepositoryServiceAPI/Content/RepositoryServiceAPI/RepositoryServiceAPI-Example-Connect-cURL-Certificates.htm)
 
 ## Command line options
@@ -165,7 +161,7 @@ If SSL is desired, define --ssl, otherwise omit this option.
 
 ## Defining your own set of Mime-types
 
-When running _qrs-mime_ by default the list of Mime-types defined in the file `./config/mime-types.txt`
+When running _qrs-mime_ the default list of added or updated Mime-Types is defined in the file `./config/mime-types.txt`
 
 You can either modify this file to meet your custom needs or point to your very own definition of Mime-types by using the parameter `--file`
 
@@ -179,17 +175,17 @@ In every line four settings need to be made
 
 1. **File-extension** (`md` in the example above)
 2. The official **Mime-type** (`text/x-markdown` in the example above)
-3. **Additional headers** (`blank` in the example above; leave blank if your not 100% sure how to use that)
+3. **Additional headers** (left blank in the example above; leave blank if not 100% sure how to use that)
 4. Whether the given Mime-Type is **binary** or not (`false` in the example above)
 
 ## Troubleshooting
 
 Some recommendations if _qrs-mime_ does not work:
 
-* Make sure that you can reach the server, use ping `<servername>` to see if you can ping it
+* Make sure that you can reach the server. Use ping `<servername>` to see if you can ping it
 * Ensure that no firewall is preventing communication over port 4242 (certificates) or 80/443.
 * Running the tool can take a minute or two, please be patient and wait for the result.
-* If an exception is thrown you'll see a message that a log file has been created in your personal temporary folder.
+* If an exception is thrown you will see a message that a log file has been created in your personal temporary folder.
 
 ## Known Issues
 
@@ -204,7 +200,7 @@ The process for contributing is outlined below:
 2. Work on whatever bug or feature you wish
 3. Create a pull request (PR)
 
-I cannot guarantee that I will merge all PRs but I will evaluate them all.
+It cannot be guaranteed that all PRs will be merged, but they will be evaluated and commented at least.
 
 ## Related Projects
 
@@ -224,4 +220,4 @@ Released under the MIT license.
 
 ***
 
-_This file was generated by [verb-cli](https://github.com/assemble/verb-cli) on October 09, 2015._
+_This file was generated by [verb-cli](https://github.com/assemble/verb-cli) on October 10, 2015._

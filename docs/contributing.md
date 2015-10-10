@@ -5,4 +5,4 @@ The process for contributing is outlined below:
 2. Work on whatever bug or feature you wish
 3. Create a pull request (PR)
 
-I cannot guarantee that I will merge all PRs but I will evaluate them all.
+It cannot be guaranteed that all PRs will be merged, but they will be evaluated and commented at least.
