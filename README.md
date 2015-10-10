@@ -2,6 +2,10 @@
 
 > Add mime types to the Qlik Sense repository.
 
+[![](http://serve.mod.bz/branch/)](https://github.com/stefanwalther/qrs-mime)
+
+***
+
 ## About
 
 The _qrs-mime_ tool is a command line tool based on node.js. It allows you to add mime-type definitions to Qlik Sense server.
