@@ -1,0 +1,4 @@
+v0.1.15:
+  date: "2015-10-13"
+  enhancements:
+    - "Switch to qrs v1.0.0"
