@@ -1,6 +1,6 @@
 {
   "name": "qrs-mime",
-  "version": "0.1.14",
+  "version": "0.1.15",
   "description": "Add mime types to the Qlik Sense repository.",
   "main": "./bin/cli.js",
   "scripts": {
@@ -36,7 +36,7 @@
     "colors": "^1.1.2",
     "command-line-args": "^1.0.2",
     "lodash": "^3.10.1",
-    "qrs": "^0.1.0"
+    "qrs": "^1.0.0"
   },
   "devDependencies": {
     "gulp": "git://github.com/gulpjs/gulp#4.0",
