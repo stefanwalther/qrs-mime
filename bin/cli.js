@@ -127,7 +127,7 @@ function runWithCertificates () {
 			"authentication": 'certificates',
 			"host": options.main.server,
 			"useSSL": options.main.ssl,
-			"virtualProxy": options.main.virtualproxy || '',
+			"virtualProxy": options.main['virtual-proxy'] || '',
 			"xrfkey": 'ABCDEFG123456789',
 			'port': options.main.port || 4242,
 			'cert': options.certFiles.cert,
@@ -167,6 +167,16 @@ function checkHeaderOptions () {
 
 		return false;
 	}
+	if ( _.isEmpty( options.main['virtual-proxy'] ) ) {
+		console.log( colors.red( 'Using header authentication: Please define the virtual-proxy, which is typically not blank if you are using header authentication. ' ) );
+		console.log( '' );
+		console.log( '\t' + colors.yellow( 'Example:' ) );
+		console.log( '\t' + colors.yellow( '--virtual-proxy=hdr' ) );
+		console.log('');
+		console.log('If you want to skip this validation rule, use ' + colors.yellow('--virtual-proxy=blank'));
+		console.log('If you want to use another authentication method, have a look at the help (--help) or the online documentation.');
+		return false;
+	}
 	return true;
 
 }
@@ -178,7 +188,7 @@ function runWithHeaders () {
 			"authentication": 'header',
 			"host": options.main.server,
 			"useSSL": options.main.ssl,
-			"virtualProxy": options.main.virtualproxy || null,
+			"virtualProxy": options.main['virtual-proxy'] && options.main['virtual-proxy'] !== 'blank' ? options.main['virtual-proxy'] : null,
 			"headerKey": options.main['header-key'] || null,
 			"headerValue": options.main['header-value'] || null,
 			"xrfkey": 'ABCDEFG123456789'

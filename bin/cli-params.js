@@ -45,7 +45,7 @@ module.exports = [
 		"description": "Server where the QRS is running."
 	},
 	{
-		"name": "virtualproxy",
+		"name": "virtual-proxy",
 		"type": String,
 		"group": "main",
 		"description": "Name of the virtual proxy."

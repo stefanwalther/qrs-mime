@@ -40,7 +40,7 @@ Then run the following command:
 qrs-mime 
 	--auth=header 
 	--server=myserver.mydomian.com 
-	--virtualproxy=hdr 
+	--virtual-proxy=hdr 
 	--ssl 
 	--header-key=hdr-usr 
 	--header-value=mydomain.com\myUserName
