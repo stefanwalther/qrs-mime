@@ -53,6 +53,7 @@ qrs-mime
 
 Some references to help you to set up header authentication:
 
+* [Header authentication in Qlik Sense: Setup and configuration](http://bit.ly/1MQc7sZ)
 * [Qlik Sense Help: Virtual Proxy](http://help.qlik.com/sense/2.1/en-US/online/Subsystems/ManagementConsole/Content/create-virtual-proxy.htm)
 
 

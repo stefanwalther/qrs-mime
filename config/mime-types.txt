@@ -56,3 +56,4 @@ template;text/plain;;false
 lic;application/octet-stream;;true
 cor;application/octet-stream;;true
 woff2;application/font-woff2;;true
+gitignore;text/plain;;false
