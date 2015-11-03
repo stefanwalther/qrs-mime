@@ -98,7 +98,7 @@ _(Remove line breaks which were just added to improve readability)_
 
 Some references to help you to set up header authentication:
 
-* [Header authentication in Qlik Sense: Setup and configuration](http://bit.ly/1MQc7sZ)
+* [Header authentication in Qlik Sense: Setup and configuration](https://github.com/stefanwalther/articles/tree/master/header-authentication-configuration)
 * [Qlik Sense Help: Virtual Proxy](http://help.qlik.com/sense/2.1/en-US/online/Subsystems/ManagementConsole/Content/create-virtual-proxy.htm)
 
 ### Running _qrs-mime_ on a different machine / using certificates
@@ -136,6 +136,7 @@ _(Remove line breaks which were just added to improve readability)_
 
 Some references to help to set up certificate based authentication:
 
+* [Authenticating with Certificates: Setup and Configuration](https://github.com/stefanwalther/articles/tree/master/authentication-certificates)
 * [Qlik Sense Developer Help: Exporting certificates](http://help.qlik.com/sense/2.1/en-US/online/Subsystems/ManagementConsole/Content/export-certificates.htm) (Make sure you use the platform independent format)
 * [Qlik Sense Developer Help: Connecting using certificates](http://help.qlik.com/sense/2.1/en-us/developer/Subsystems/RepositoryServiceAPI/Content/RepositoryServiceAPI/RepositoryServiceAPI-Example-Connect-cURL-Certificates.htm)
 
