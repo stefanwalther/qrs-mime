@@ -34,12 +34,12 @@
   "dependencies": {
     "clui": "^0.3.1",
     "colors": "^1.1.2",
-    "command-line-args": "^1.0.2",
-    "lodash": "^3.10.1",
-    "qrs": "^1.0.0"
+    "command-line-args": "^4.0.4",
+    "lodash": "^4.17.4",
+    "qrs": "^2.0.2"
   },
   "devDependencies": {
     "gulp": "git://github.com/gulpjs/gulp#4.0",
-    "sense-go": "^0.5.10"
+    "sense-go": "^0.12.2"
   }
 }
