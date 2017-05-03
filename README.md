@@ -1,5 +1,7 @@
 # qrs-mime
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/stefanwalther/qrs-mime.svg)](https://greenkeeper.io/)
+
 > Add mime types to the Qlik Sense repository.
 
 [![](http://serve.mod.bz/branch/)](https://github.com/stefanwalther/qrs-mime)
